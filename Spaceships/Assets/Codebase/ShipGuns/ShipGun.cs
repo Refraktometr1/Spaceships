@@ -1,13 +1,15 @@
-﻿using Codebase.ShipGuns;
+﻿using System.Collections.Generic;
+using Codebase.ShipGuns;
+using UnityEditor;
 
 namespace Codebase
 {
     public class ShipGun : ShipSlotItem, IDamageable, IShooting
     {
-        private DamageType _bulletType;
-        private int Damage;
-        private int _chargeStorageSize;
-        private int _reloadTime;
+        public ShipSlotItemType ShipSlotItemType;
+        public List<GunBarrel> Barrels;
+        public int Hp;
+        
         
         
         public void DoShoot()
@@ -17,10 +19,5 @@ namespace Codebase
         public void ApplyDamage(int damage, DamageType type)
         {
         }
-    }
-
-    public interface IShooting
-    {
-        void DoShoot();
     }
 }

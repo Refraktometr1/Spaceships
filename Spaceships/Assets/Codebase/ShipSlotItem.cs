@@ -1,9 +1,12 @@
-﻿namespace Codebase
+﻿using System;
+
+namespace Codebase
 {
+    [Serializable]
     public class ShipSlotItem
     {
-        private SlotType _slotType;
-        private int Hp;
-        private int _level;
+        public SlotType SlotType;
+        public int Level;
+        public ShipSlotItemType SlotItemType;
     }
 }
