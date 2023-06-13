@@ -3,15 +3,15 @@ namespace Codebase
     public enum ShipSlotItemType
     {
         None = 0,
-        MachineGun = 10,
-        MachineGunDouble = 20,
-        PlasmaCannon = 30,
-        PlasmaCannonDouble = 40,
-        MachineGunDoublePlasmaCannonDouble = 50,
-        SmallEngine = 60,
-        LargeEngine = 70,
-        EnergyShield = 80,
-        MachineGunPlasmaCannonEnergyShield = 90,
-        HpRegenerator = 100,
+        MachineGunLight = 10,
+        MachineGunDoubleMedium = 20,
+        PlasmaCannonLight = 30,
+        PlasmaCannonDoubleMedium = 40,
+        MachineGunDoublePlasmaCannonDoubleHeavy = 50,
+        SmallEngineMedium = 60,
+        LargeEngineHeavy = 70,
+        EnergyShieldMedium = 80,
+        MachineGunPlasmaCannonEnergyShieldHeavy = 90,
+        HpRegeneratorLight = 100,
     }
 }

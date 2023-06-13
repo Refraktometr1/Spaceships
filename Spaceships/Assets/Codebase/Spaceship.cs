@@ -7,7 +7,7 @@ namespace Codebase
         public ShipType Type;
         public int Hp;
         public int Speed;
-        public List<ShipSlot> Slots;
+        public List<ShipSlotItem> Slots;
         private int _level;
     }
 }

@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ba5ca059c14c00805107fc7dca6558, type: 3}
-  m_Name: Enterprise
+  m_Script: {fileID: 11500000, guid: 49a7d07f1be04d649ddf1533e3de8b16, type: 3}
+  m_Name: MachineGunPlasmaCannonEnergyShield
   m_EditorClassIdentifier: 
-  Type: 1
-  BaseHp: 3
-  BaseSpeed: 9
-  Slots:
-  - SlotType: 1
-    Level: 3
-    SlotItemType: 0
-  - SlotType: 2
-    Level: 0
-    SlotItemType: 0
+  ShipSlotItemType: 0
+  SlotType: 0
+  Barrels: []
+  Hp: 0

@@ -9,6 +9,7 @@ namespace Codebase.StaticData
         public ShipSlotItemType ShipSlotItemType;
         public SlotType SlotType;
         public List<GunBarrel> Barrels;
-        public int Hp;
+        public int Hp = 0;
+        private int EnergyShield = 0;
     }
 }

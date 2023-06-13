@@ -15,14 +15,13 @@ MonoBehaviour:
   Type: 2
   BaseHp: 6
   BaseSpeed: 15
-  Slot1Type: 1
-  Slot1: 10
-  SlotsItems:
+  Slots:
+  - SlotType: 2
+    Level: 3
+    SlotItemType: 20
   - SlotType: 1
     Level: 3
-    SlotItemType: 30
-  - SlotType: 2
-    Level: 4
-    SlotItemType: 70
-  Slot2Type: 2
-  Slot2: 80
+    SlotItemType: 10
+  - SlotType: 1
+    Level: 1
+    SlotItemType: 100
