@@ -1,4 +1,4 @@
-﻿namespace Codebase
+﻿namespace Codebase.Spaceships
 {
     public interface IRegenerable
     {

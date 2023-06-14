@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Codebase
+namespace Codebase.Spaceships
 {
     [Serializable]
     public class ShipSlot

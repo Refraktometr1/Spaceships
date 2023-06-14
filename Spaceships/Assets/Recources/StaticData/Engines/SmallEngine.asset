@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6846b9e0b7434a3182e8f4b1569abb29, type: 3}
   m_Name: SmallEngine
   m_EditorClassIdentifier: 
-  MovePower: 0
+  ShipSlotItemType: 60
+  SlotType: 2
+  MovePower: 10
+  Hp: 0

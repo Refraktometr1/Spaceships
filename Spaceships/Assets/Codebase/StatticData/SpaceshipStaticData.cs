@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Codebase.Spaceships;
 using UnityEngine;
 
 namespace Codebase.StaticData

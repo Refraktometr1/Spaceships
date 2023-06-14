@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a7d07f1be04d649ddf1533e3de8b16, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: 
-  ShipSlotItemType: 30
+  ShipSlotItemType: 10
   SlotType: 1
   Barrels:
   - BulletType: 1
     Cooldown: 10
-    ChargeStorageSize: 2
+    ChargeStorageSize: 25
   Hp: 10

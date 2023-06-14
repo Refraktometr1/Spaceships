@@ -1,4 +1,6 @@
-﻿namespace Codebase.ShipEngines
+﻿using Codebase.Spaceships;
+
+namespace Codebase.ShipEngines
 {
     public class ShipEngine :  ShipSlotItem , IShipAccelerator
     {

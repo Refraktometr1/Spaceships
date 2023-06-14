@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Codebase.Spaceships;
+using UnityEngine;
 
 namespace Codebase.StaticData
 {

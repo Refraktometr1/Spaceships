@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a7d07f1be04d649ddf1533e3de8b16, type: 3}
   m_Name: MachineGunPlasmaCannonEnergyShield
   m_EditorClassIdentifier: 
-  ShipSlotItemType: 0
-  SlotType: 0
-  Barrels: []
-  Hp: 0
+  ShipSlotItemType: 90
+  SlotType: 3
+  Barrels:
+  - BulletType: 1
+    Cooldown: 10
+    ChargeStorageSize: 25
+  - BulletType: 3
+    Cooldown: 24
+    ChargeStorageSize: 15
+  Hp: 50

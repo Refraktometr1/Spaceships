@@ -1,7 +1,7 @@
 ﻿using System;
 using Codebase.ShipGuns;
 
-namespace Codebase
+namespace Codebase.Spaceships
 {
     [Serializable]
     public class ShipSlotItem : IRegenerable, IShieldable, IDamageable
