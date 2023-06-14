@@ -9,7 +9,18 @@ namespace Codebase
         public ShipSlotItemType ShipSlotItemType;
         public List<GunBarrel> Barrels;
         public int Hp;
-        
+
+
+        public ShipGun(ShipSlotItemType shipSlotItemType, List<GunBarrel> barrels, int hp, int level, int energyShield, int regeneratorHp)
+        {
+            ShipSlotItemType = shipSlotItemType;
+            Barrels = barrels;
+            Hp = hp;
+            Level = level;
+            EnergyShield = energyShield;
+            RegeneratorHp = regeneratorHp;
+        }
+
         public void DoShoot()
         {
         }

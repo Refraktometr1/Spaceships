@@ -19,3 +19,6 @@ MonoBehaviour:
     Cooldown: 10
     ChargeStorageSize: 25
   Hp: 10
+  EnergyShield: 0
+  RegeneratorHp: 0
+  Prefab: {fileID: 3197611194039334218, guid: 146215a4c433c6043bc5f6fd227f8690, type: 3}

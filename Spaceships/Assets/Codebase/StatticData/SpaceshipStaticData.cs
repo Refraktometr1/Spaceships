@@ -16,5 +16,7 @@ namespace Codebase.StaticData
         public int BaseSpeed;
 
         public List<ShipSlotItem> Slots;
+
+        public GameObject shipPrefab;
     }
 }

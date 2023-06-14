@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 459311846}
   - component: {fileID: 459311845}
   - component: {fileID: 459311844}
+  - component: {fileID: 459311847}
   m_Layer: 5
   m_Name: CreateShip
   m_TagString: Untagged
@@ -346,6 +347,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459311842}
   m_CullTransparentMesh: 1
+--- !u!114 &459311847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459311842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0d94dba1f7455aa84b860c2bc1307a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 459311844}
+  canvas: {fileID: 258507703}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ namespace Codebase.StaticData
         public SlotType SlotType;
         public List<GunBarrel> Barrels;
         public int Hp = 0;
-        private int EnergyShield = 0;
+        public int EnergyShield = 0;
+        public int RegeneratorHp = 0;
+        public GameObject Prefab;
     }
 }

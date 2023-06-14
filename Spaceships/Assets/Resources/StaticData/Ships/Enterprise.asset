@@ -17,8 +17,6 @@ MonoBehaviour:
   BaseSpeed: 9
   Slots:
   - SlotType: 1
-    Level: 3
-    SlotItemType: 0
-  - SlotType: 2
-    Level: 0
-    SlotItemType: 0
+    Level: 1
+    SlotItemType: 10
+  shipPrefab: {fileID: 304443665165284118, guid: d3a68fe0c847920468c34c142612ea47, type: 3}
