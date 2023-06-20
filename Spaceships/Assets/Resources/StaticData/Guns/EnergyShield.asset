@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a7d07f1be04d649ddf1533e3de8b16, type: 3}
   m_Name: EnergyShield
   m_EditorClassIdentifier: 
-  ShipSlotItemType: 80
+  ShipSlotItemType: 300
   SlotType: 2
   Barrels: []
   Hp: 25
+  EnergyShield: 0
+  RegeneratorHp: 0
+  Sprite: {fileID: 0}

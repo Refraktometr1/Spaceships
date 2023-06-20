@@ -13,6 +13,6 @@ namespace Codebase.StaticData
         public int Hp = 0;
         public int EnergyShield = 0;
         public int RegeneratorHp = 0;
-        public GameObject Prefab;
+        public Sprite Sprite;
     }
 }

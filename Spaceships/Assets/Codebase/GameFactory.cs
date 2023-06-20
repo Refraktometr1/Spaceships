@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Codebase.Services;
 using Codebase.Spaceships;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -12,7 +10,8 @@ namespace Codebase
     public class GameFactory : MonoBehaviour
     {
         public Button Button;
-        public Canvas canvas;
+        public Canvas Canvas;
+        [SerializeField] private GameObject gunPrefab;
 
         private void Awake()
         {
@@ -28,9 +27,8 @@ namespace Codebase
         public void CreateShip(ShipType shipType, int level)
         {
             var shipStaticData = StaticDataService.GetSpaceshipData(shipType);
-            GameObject spaceshipGameObject = Object.Instantiate(shipStaticData.shipPrefab, canvas.transform);
+            GameObject spaceshipGameObject = Instantiate(shipStaticData.shipPrefab, Canvas.transform);
             var slotsGO = spaceshipGameObject.GetComponent<SpaceshipSlots>();
-            
             
             var spaceship = new Spaceship();
             
@@ -41,11 +39,24 @@ namespace Codebase
                 
             for (int i = 0; i < shipStaticData.Slots.Count; i++)
             {
-                if ((int)shipStaticData.Slots[i].SlotItemType < 100)
+                int slotItemTypeIndex = (int) shipStaticData.Slots[i].SlotItemType; 
+                if (slotItemTypeIndex < 100)
                 {
                     var gunStatic = StaticDataService.GetGunData(shipStaticData.Slots[i].SlotItemType);
-                    var gun = new ShipGun(gunStatic.ShipSlotItemType, gunStatic.Barrels, gunStatic.Hp, shipStaticData.Slots[i].Level, gunStatic.EnergyShield, gunStatic.RegeneratorHp);
-                    Object.Instantiate(gunStatic.Prefab, slotsGO.Slots[i].transform);
+                    gunPrefab.GetComponent<Image>().sprite = gunStatic.Sprite;
+                    
+                    var gunGameObject = Instantiate(gunPrefab, slotsGO.Slots[i].transform);
+
+                    var gun = gunGameObject.AddComponent<ShipGun>();
+                    gun.SlotItemType = shipStaticData.Slots[i].SlotItemType;
+                    gun.SlotType = shipStaticData.Slots[i].SlotType;
+                    
+                    gun.Barrels = gunStatic.Barrels;
+                    gun.Hp = gunStatic.Hp;
+                    gun.Level = shipStaticData.Slots[i].Level;
+                    gun.EnergyShield = gunStatic.EnergyShield;
+                    gun.RegeneratorHp = gunStatic.RegeneratorHp;
+                    
                 }
             }
         }

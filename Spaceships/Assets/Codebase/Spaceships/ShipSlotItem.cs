@@ -1,10 +1,11 @@
 ﻿using System;
 using Codebase.ShipGuns;
+using UnityEngine;
 
 namespace Codebase.Spaceships
 {
     [Serializable]
-    public class ShipSlotItem : IRegenerable, IShieldable, IDamageable
+    public class ShipSlotItem : MonoBehaviour, IRegenerable, IShieldable, IDamageable
     {
         public SlotType SlotType;
         public int Level;
