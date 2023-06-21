@@ -2,6 +2,7 @@
 using Codebase.Services;
 using Codebase.ShipEngines;
 using Codebase.Spaceships;
+using Codebase.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,12 @@ namespace Codebase
     {
         public Button Button;
         public Canvas Canvas;
+        
         [SerializeField] private GameObject slotPrefab;
+        
+        private const int HpLevelUpgradeCoefficient = 2;
+        private const int SpeedLevelUpgradeCoefficient = 2;
+
 
         private void Awake()
         {
@@ -24,19 +30,19 @@ namespace Codebase
             CreateShip(ShipType.Enterprise, 2);
         }
 
-        public void CreateShip(ShipType shipType, int level)
+        private void CreateShip(ShipType shipType, int level)
         {
-            var shipStaticData = StaticDataService.GetSpaceshipData(shipType);
+            SpaceshipStaticData shipStaticData = StaticDataService.GetSpaceshipData(shipType);
             GameObject spaceshipGameObject = Instantiate(shipStaticData.shipPrefab, Canvas.transform);
             var slotsGO = spaceshipGameObject.GetComponent<SpaceshipSlots>();
-            
-            var spaceship = new Spaceship();
-            
-            spaceship.Hp = shipStaticData.BaseHp;
-            spaceship.Speed = shipStaticData.BaseSpeed;
+
+            var spaceship = spaceshipGameObject.AddComponent<Spaceship>();
+
+            spaceship.Level = shipStaticData.Level;
+            spaceship.Hp = shipStaticData.BaseHp * (HpLevelUpgradeCoefficient * spaceship.Level);
+            spaceship.Speed = shipStaticData.BaseSpeed * (SpeedLevelUpgradeCoefficient * spaceship.Level);
             spaceship.Type = shipType;
-            spaceship.Slots = new List<ShipSlotItem>(shipStaticData.Slots.Count);
-                
+
             for (int i = 0; i < shipStaticData.Slots.Count; i++)
             {
                 int slotItemTypeIndex = (int) shipStaticData.Slots[i].SlotItemType;

@@ -15,6 +15,7 @@ MonoBehaviour:
   Type: 1
   BaseHp: 3
   BaseSpeed: 9
+  Level: 10
   Slots:
   - SlotType: 3
     Level: 0

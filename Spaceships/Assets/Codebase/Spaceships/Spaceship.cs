@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Codebase.Spaceships
 {
@@ -8,7 +7,6 @@ namespace Codebase.Spaceships
         public ShipType Type;
         public int Hp;
         public int Speed;
-        public List<ShipSlotItem> Slots;
-        private int _level;
+        public int Level;
     }
 }
