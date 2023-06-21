@@ -19,3 +19,6 @@ MonoBehaviour:
     Cooldown: 24
     ChargeStorageSize: 15
   Hp: 20
+  EnergyShield: 0
+  RegeneratorHp: 0
+  Sprite: {fileID: 21300000, guid: fdfc8a39a0a0df24fa6d37d9b343b0f0, type: 3}

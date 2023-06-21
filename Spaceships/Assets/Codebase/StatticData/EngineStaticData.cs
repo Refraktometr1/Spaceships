@@ -10,5 +10,6 @@ namespace Codebase.StaticData
         public SlotType SlotType;
         public int MovePower;
         public int Hp;
+        public Sprite Sprite;
     }
 }

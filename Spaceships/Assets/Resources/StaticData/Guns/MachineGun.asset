@@ -21,4 +21,4 @@ MonoBehaviour:
   Hp: 10
   EnergyShield: 0
   RegeneratorHp: 0
-  Sprite: {fileID: 21300000, guid: 49ae02f06bada32448c80547ca539c81, type: 3}
+  Sprite: {fileID: 21300000, guid: fdfc8a39a0a0df24fa6d37d9b343b0f0, type: 3}

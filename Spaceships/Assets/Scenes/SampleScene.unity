@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 459311844}
   Canvas: {fileID: 258507703}
-  gunPrefab: {fileID: 3197611194039334218, guid: 146215a4c433c6043bc5f6fd227f8690, type: 3}
+  slotPrefab: {fileID: 3197611194039334218, guid: 146215a4c433c6043bc5f6fd227f8690, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

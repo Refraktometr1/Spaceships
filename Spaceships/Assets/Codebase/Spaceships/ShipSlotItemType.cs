@@ -17,7 +17,7 @@ namespace Codebase.Spaceships
         LargeEngineHeavy = 120,
         
         //Items
-        EnergyShieldMedium = 300,
-        HpRegeneratorLight = 301,
+        EnergyShieldMedium = 301,
+        HpRegeneratorLight = 302,
     }
 }

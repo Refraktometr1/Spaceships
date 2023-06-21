@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Codebase.Services;
+using Codebase.ShipEngines;
 using Codebase.Spaceships;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 namespace Codebase
 {
@@ -11,7 +11,7 @@ namespace Codebase
     {
         public Button Button;
         public Canvas Canvas;
-        [SerializeField] private GameObject gunPrefab;
+        [SerializeField] private GameObject slotPrefab;
 
         private void Awake()
         {
@@ -39,13 +39,20 @@ namespace Codebase
                 
             for (int i = 0; i < shipStaticData.Slots.Count; i++)
             {
-                int slotItemTypeIndex = (int) shipStaticData.Slots[i].SlotItemType; 
+                int slotItemTypeIndex = (int) shipStaticData.Slots[i].SlotItemType;
+                
+                if (slotItemTypeIndex == 0)
+                {
+                    Debug.Log($"slot {i} is empty");
+                    continue;
+                }
+                
                 if (slotItemTypeIndex < 100)
                 {
                     var gunStatic = StaticDataService.GetGunData(shipStaticData.Slots[i].SlotItemType);
-                    gunPrefab.GetComponent<Image>().sprite = gunStatic.Sprite;
+                    slotPrefab.GetComponent<Image>().sprite = gunStatic.Sprite;
                     
-                    var gunGameObject = Instantiate(gunPrefab, slotsGO.Slots[i].transform);
+                    var gunGameObject = Instantiate(slotPrefab, slotsGO.Slots[i].transform);
 
                     var gun = gunGameObject.AddComponent<ShipGun>();
                     gun.SlotItemType = shipStaticData.Slots[i].SlotItemType;
@@ -56,7 +63,22 @@ namespace Codebase
                     gun.Level = shipStaticData.Slots[i].Level;
                     gun.EnergyShield = gunStatic.EnergyShield;
                     gun.RegeneratorHp = gunStatic.RegeneratorHp;
+                }
+
+                if (slotItemTypeIndex is > 100 and < 300)
+                {
+                    var engineStatic = StaticDataService.GetEngineData(shipStaticData.Slots[i].SlotItemType);
+                    slotPrefab.GetComponent<Image>().sprite = engineStatic.Sprite;
                     
+                    var engineGameObject = Instantiate(slotPrefab, slotsGO.Slots[i].transform);
+                    
+                    var engine = engineGameObject.AddComponent<ShipEngine>();
+                    
+                    engine.Level = shipStaticData.Slots[i].Level;
+                    engine.SlotItemType = shipStaticData.Slots[i].SlotItemType;
+                    engine.SlotType = shipStaticData.Slots[i].SlotType;
+
+                    engine.MovePower = engineStatic.MovePower;
                 }
             }
         }
