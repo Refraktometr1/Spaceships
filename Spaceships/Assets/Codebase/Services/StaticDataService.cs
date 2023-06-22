@@ -6,31 +6,37 @@ using UnityEngine;
 
 namespace Codebase.Services
 {
-    public static class StaticDataService 
+    public class StaticDataService 
     {
         private const string ShipDataPath = "StaticData/Ships";
         private const string GunsDataPath = "StaticData/Guns";
-        private const string EnginesDataWindowPath = "StaticData/Engines";
+        private const string EnginesDataPath = "StaticData/Engines";
+        private const string ItemDataPath = "StaticData/Items";
 
 
         private static Dictionary<ShipType,SpaceshipStaticData> _spaceships;
         private static Dictionary<ShipSlotItemType, GunStaticData> _guns;
         private static Dictionary<ShipSlotItemType, EngineStaticData> _engines;
+        private static Dictionary<ShipSlotItemType, ItemStaticData> _items;
 
-        public static void Load()
+        public void Load()
         {
             _spaceships = Resources.LoadAll<SpaceshipStaticData>(ShipDataPath).ToDictionary(x => x.Type, x => x);
             _guns = Resources.LoadAll<GunStaticData>(GunsDataPath).ToDictionary(x => x.ShipSlotItemType, x => x);
-            _engines = Resources.LoadAll<EngineStaticData>(EnginesDataWindowPath).ToDictionary(x => x.ShipSlotItemType, x => x);
+            _engines = Resources.LoadAll<EngineStaticData>(EnginesDataPath).ToDictionary(x => x.ShipSlotItemType, x => x);
+            _items = Resources.LoadAll<ItemStaticData>(ItemDataPath).ToDictionary(x => x.ShipSlotItemType, x => x);
         }
 
-        public static SpaceshipStaticData GetSpaceshipData(ShipType shipType) =>
+        public SpaceshipStaticData GetSpaceshipData(ShipType shipType) =>
             _spaceships.TryGetValue(shipType, out SpaceshipStaticData spaceshipStaticData) ? spaceshipStaticData : null;
 
-        public static GunStaticData GetGunData(ShipSlotItemType gunType) => 
+        public GunStaticData GetGunData(ShipSlotItemType gunType) => 
             _guns.TryGetValue(gunType, out GunStaticData gunStaticData) ? gunStaticData : null;
 
-        public static EngineStaticData GetEngineData(ShipSlotItemType slotItemType) => 
+        public EngineStaticData GetEngineData(ShipSlotItemType slotItemType) => 
             _engines.TryGetValue(slotItemType, out EngineStaticData engineStaticData) ? engineStaticData : null;
+
+        public ItemStaticData GetItemData(ShipSlotItemType slotItemType) => 
+            _items.TryGetValue(slotItemType, out ItemStaticData itemStaticData) ? itemStaticData : null;
     }
 }

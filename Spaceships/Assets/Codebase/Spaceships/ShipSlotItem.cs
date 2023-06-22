@@ -10,8 +10,8 @@ namespace Codebase.Spaceships
         public SlotType SlotType;
         public int Level;
         public ShipSlotItemType SlotItemType;
-        internal int EnergyShield;
-        internal int RegeneratorHp;
+        public int EnergyShield;
+        public int RegeneratorHp;
         
         public int GetRegeneratorHp() => RegeneratorHp;
 
